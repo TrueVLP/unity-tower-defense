@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HomeButtonScript : MonoBehaviour
 {
-    void OnMouseDown()
+    public void HomeClick()
     {
         SceneManager.LoadScene(0);
     }

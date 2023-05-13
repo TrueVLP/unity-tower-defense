@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Spawner_mainNEU : MonoBehaviour
+public class Spawner_mainNEU : MonoBehaviour, ISaveable
 {
     public GameObject[] enemyPrefabs; // Array mit den zu spawnenden Gegner-Objekten
     public float spawnRadius = 5f; // Radius innerhalb dessen die Gegner spawnen sollen
@@ -44,5 +44,12 @@ public class Spawner_mainNEU : MonoBehaviour
 
             yield return new WaitForSeconds(spawnInterval);
         }
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("Welle", waveCount);
+        PlayerPrefs.SetInt("Health", hearts);
+
     }
 }
