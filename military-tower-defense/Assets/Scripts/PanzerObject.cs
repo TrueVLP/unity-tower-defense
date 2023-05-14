@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class PfeilScript : MonoBehaviour
 {
-    
-        public string targetTag = "Bloon";
+
+    public string targetTag = "bloon";
     public float rotationSpeed = 5f;
     public float range = 10f;
     public GameObject projectilePrefab;
     public float fireRate = 1f;
-    public Vector3 projectileOffset;
+    public Transform projectileSpawnPoint;
 
     private Transform target;
     private float fireTimer = 0f;
@@ -46,9 +46,10 @@ public class PfeilScript : MonoBehaviour
         if (fireTimer >= fireRate)
         {
             fireTimer = 0f;
-            Instantiate(projectilePrefab, transform.position + projectileOffset, transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         }
     }
+
 }
 
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Play_button : MonoBehaviour
 {
-    void OnMouseDown()
+    public void PlayClick()
     {
         SceneManager.LoadScene(1);
     }
