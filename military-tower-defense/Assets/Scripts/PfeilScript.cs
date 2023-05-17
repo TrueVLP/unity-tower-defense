@@ -6,19 +6,25 @@ namespace Assets.Scripts
 {
     public class PfeilScript : MonoBehaviour
     {
-        public float speed = 10f;
-        public float lifetime = 5f;
+        public string objectTag = "pfeil";
+        public float speed = 5f;
+
+        private GameObject[] objectsToMove;
 
         void Start()
         {
-            // Destroy the projectile after its lifetime has passed
-            Destroy(gameObject, lifetime);
+            
         }
 
         void Update()
         {
-            // Move the projectile forward
-            transform.position += transform.forward * speed * Time.deltaTime;
+            objectsToMove = GameObject.FindGameObjectsWithTag(objectTag);
+
+            foreach (GameObject objectToMove in objectsToMove)
+            {
+                Vector3 direction = new Vector3(objectToMove.transform.forward.x, objectToMove.transform.forward.y, 0f);
+                objectToMove.transform.position += direction * speed * Time.deltaTime;
+            }
         }
     }
 }

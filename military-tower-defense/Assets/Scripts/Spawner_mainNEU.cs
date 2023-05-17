@@ -38,9 +38,9 @@ public class Spawner_mainNEU : MonoBehaviour, ISaveable
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
 
             // Update round text
-            roundText.text = "Round: " + waveCount;
+            roundText.text = "" + waveCount;
 
-            heartText.text = "Lives: " + hearts;
+            heartText.text = "" + hearts;
 
             yield return new WaitForSeconds(spawnInterval);
         }

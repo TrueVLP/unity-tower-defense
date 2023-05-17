@@ -4,18 +4,18 @@ using UnityEngine;
 
 
 
-public class PfeilScript : MonoBehaviour
+public class PanzerObject : MonoBehaviour
 {
 
     public string targetTag = "bloon";
     public float rotationSpeed = 5f;
     public float range = 10f;
     public GameObject projectilePrefab;
-    public float fireRate = 1f;
-    public Transform projectileSpawnPoint;
+    public Transform spawnPoint;
+    public float spawnRate = 1f;
+    private float timer = 0f;
 
     private Transform target;
-    private float fireTimer = 0f;
 
     void Update()
     {
@@ -39,14 +39,14 @@ public class PfeilScript : MonoBehaviour
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
             }
-        }
 
-        // Spawnen von Raketen/Pfeilen
-        fireTimer += Time.deltaTime;
-        if (fireTimer >= fireRate)
-        {
-            fireTimer = 0f;
-            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            timer += Time.deltaTime;
+            if (timer >= spawnRate)
+            {
+                Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
+                timer = 0f;
+
+            }
         }
     }
 

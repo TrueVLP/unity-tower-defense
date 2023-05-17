@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class BackButtonScript : MonoBehaviour
+public class SensorScript : MonoBehaviour
 {
-    public void BackClick()
+    void Start()
     {
-
         int counter = PlayerPrefs.GetInt("Counter", 0);
-        counter = counter - 1;
+        counter++;
         PlayerPrefs.SetInt("Counter", counter);
-
-        SceneManager.LoadScene(0);
-
     }
+
 }

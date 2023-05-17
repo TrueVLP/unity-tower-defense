@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class WaypointController2 : MonoBehaviour
 {
     public Transform[] waypoints; // Array of waypoints
-    public float speed = 0f; // Speed of the GameObject
+    public int speed = 0; // Speed of the GameObject
     public Button speedButton1; // The first button to control the speed
     public Button speedButton2; // The second button to control the speed
 
@@ -13,6 +13,7 @@ public class WaypointController2 : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("speed", 0);
         waypoints[0] = GameObject.Find("Waypoint").transform;
         waypoints[1] = GameObject.Find("Waypoint (1)").transform;
         waypoints[2] = GameObject.Find("Waypoint (2)").transform;
@@ -56,11 +57,13 @@ public class WaypointController2 : MonoBehaviour
 
     void SetSpeedToOne()
     {
-        speed = 1f;
+        speed = 1;
+        PlayerPrefs.SetInt("speed", 1);
     }
 
     void SetSpeedToThree()
     {
-        speed = 3f;
+        speed = 3;
+        PlayerPrefs.SetInt("speed", 3);
     }
 }
