@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6387809783539238846}
   - component: {fileID: 2844378945032861612}
-  - component: {fileID: 7062588995797447838}
   - component: {fileID: 1848485647193095638}
+  - component: {fileID: 4633695233263758245}
   m_Layer: 0
   m_Name: Pfeil
   m_TagString: pfeil
@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579462436789678987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -0.030727196, y: 0.11913785, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
 --- !u!212 &2844378945032861612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7062588995797447838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579462436789678987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 148be68a729f2684d968005ac2fdde54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  objectToMove: {fileID: 579462436789678987}
 --- !u!61 &1848485647193095638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4633695233263758245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579462436789678987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739afbdb3e2412b418d8424d45c67940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

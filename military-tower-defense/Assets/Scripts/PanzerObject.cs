@@ -9,7 +9,7 @@ public class PanzerObject : MonoBehaviour
 
     public string targetTag = "bloon";
     public float rotationSpeed = 5f;
-    public float range = 10f;
+    public float range = 1f;
     public GameObject projectilePrefab;
     public Transform spawnPoint;
     public float spawnRate = 1f;
@@ -19,15 +19,16 @@ public class PanzerObject : MonoBehaviour
 
     void Update()
     {
-        // Suche nach dem Ziel anhand des Tags
-        if (target == null)
+        while (target == null || Vector3.Distance(transform.position, target.position) > range)
         {
+            target = null;
             GameObject targetObject = GameObject.FindGameObjectWithTag(targetTag);
             if (targetObject != null)
             {
                 target = targetObject.transform;
             }
         }
+
 
         // Orientierung des Panzers zum Ziel
         if (target != null)

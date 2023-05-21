@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PfeilScript2 : MonoBehaviour
 {
-    public float speed = 10000f;
-    public GameObject objectToMove;
+    public float speed = 5f;
 
     void Update()
     {
-        Vector3 direction = new Vector3(objectToMove.transform.forward.x, objectToMove.transform.forward.y, 0f);
-        objectToMove.transform.position += direction * speed * Time.deltaTime;
+        Vector3 direction = new Vector3(transform.up.x, transform.up.y, 0);
+        transform.position += direction * speed * Time.deltaTime;
     }
+
 }
