@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PfeilScript2 : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
+
+    public int moneyability;
+
+    void Start()
+    {
+        PlayerPrefs.SetInt("ability2", 0);
+    }
 
     void Update()
     {
@@ -12,4 +20,21 @@ public class PfeilScript2 : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        int money = PlayerPrefs.GetInt("money");
+        if(PlayerPrefs.GetInt("ability2") == 1)
+        {
+            money = money + 40;
+        }
+        else
+        {
+            money = money + 20;
+        }
+        
+        PlayerPrefs.SetInt("money", money);
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
+    }
 }

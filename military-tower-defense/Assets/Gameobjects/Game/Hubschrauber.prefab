@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7166835590787622394}
   m_Layer: 0
   m_Name: Hubschrauber
-  m_TagString: Untagged
+  m_TagString: hubschrauber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ Transform:
   m_Children:
   - {fileID: 1138072890684349842}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4775862007811907329
 SpriteRenderer:
@@ -133,9 +133,10 @@ MonoBehaviour:
   targetTag: bloon
   rotationSpeed: 5
   range: 10
-  projectilePrefab: {fileID: 579462436789678987, guid: f3c037f478f247441a21e9cbb2ed6e26, type: 3}
+  projectilePrefab: {fileID: 2993529361147213156, guid: bf85e063e2e059d4abc85cf2f46fbacd, type: 3}
   spawnPoint: {fileID: 1138072890684349842}
   spawnRate: 1
+  rangeAbility: 0
 --- !u!61 &7166835590787622394
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,5 +13,7 @@ public class Play_button : MonoBehaviour
         counter = counter + 1;
         PlayerPrefs.SetInt("PCounter", counter);
         SceneManager.LoadScene(1);
+
+        PlayerPrefs.SetInt("bauen", 0);
     }
 }

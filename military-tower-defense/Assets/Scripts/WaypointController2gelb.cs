@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class WaypointController2 : MonoBehaviour
+
+public class WaypointController2gelb : MonoBehaviour
 {
     public Transform[] waypoints; // Array of waypoints
-    public int speed = 0; // Speed of the GameObject
-    public Button speedButton1; // The first button to control the speed
-    public Button speedButton2; // The second button to control the speed
+    public int speed;
+    public Hearts otherScript;
 
     private int currentWaypointIndex = 0; // Index of the current waypoint
 
     void Start()
     {
-        PlayerPrefs.SetInt("speed", 0);
+        speed = PlayerPrefs.GetInt("speed");
         waypoints[0] = GameObject.Find("Waypoint").transform;
         waypoints[1] = GameObject.Find("Waypoint (1)").transform;
         waypoints[2] = GameObject.Find("Waypoint (2)").transform;
@@ -30,20 +30,11 @@ public class WaypointController2 : MonoBehaviour
         waypoints[13] = GameObject.Find("Waypoint (13)").transform;
         waypoints[14] = GameObject.Find("Waypoint (14)").transform;
         waypoints[15] = GameObject.Find("Waypoint (15)").transform;
-
-
-
-        // Find the buttons in the scene and assign them to the variables
-        speedButton1 = GameObject.Find("SpeedButton1").GetComponent<Button>();
-        speedButton2 = GameObject.Find("SpeedButton2").GetComponent<Button>();
-
-        // Add listeners to the buttons to control the speed
-        speedButton1.onClick.AddListener(SetSpeedToOne);
-        speedButton2.onClick.AddListener(SetSpeedToThree);
     }
 
     void Update()
     {
+        speed = PlayerPrefs.GetInt("speed");
         // Move the GameObject towards the current waypoint
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
 
@@ -53,17 +44,5 @@ public class WaypointController2 : MonoBehaviour
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
-    }
-
-    void SetSpeedToOne()
-    {
-        speed = 1;
-        PlayerPrefs.SetInt("speed", 1);
-    }
-
-    void SetSpeedToThree()
-    {
-        speed = 3;
-        PlayerPrefs.SetInt("speed", 3);
     }
 }

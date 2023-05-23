@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8169647905461787745}
   - component: {fileID: 6134965750232764828}
-  - component: {fileID: 9020013590232860343}
+  - component: {fileID: 5743867206825531044}
+  - component: {fileID: 7966501671384741247}
   m_Layer: 0
   m_Name: Bloon V2 - Rot
   m_TagString: bloon
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6134965750232764828
 SpriteRenderer:
@@ -85,7 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9020013590232860343
+--- !u!65 &5743867206825531044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082400328489649443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.8, y: 10.8, z: 17.9768}
+  m_Center: {x: 0, y: 0, z: 4.850148}
+--- !u!114 &7966501671384741247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6082400328489649443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28485545646dca94287c0faee8661905, type: 3}
+  m_Script: {fileID: 11500000, guid: 296b852b2a22239468801de7b33fe74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -117,3 +139,4 @@ MonoBehaviour:
   speed: 0
   speedButton1: {fileID: 0}
   speedButton2: {fileID: 0}
+  otherScript: {fileID: 0}

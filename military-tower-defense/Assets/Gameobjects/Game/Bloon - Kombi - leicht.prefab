@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4799969539341379082}
   - component: {fileID: 7805952106547721029}
-  - component: {fileID: 6723452759573961418}
+  - component: {fileID: 7988324574276558216}
+  - component: {fileID: 1300400537783379573}
   m_Layer: 0
   m_Name: Bloon - Kombi - leicht
   m_TagString: bloon
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7805952106547721029
 SpriteRenderer:
@@ -85,7 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6723452759573961418
+--- !u!65 &7988324574276558216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379381572274587420}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.2, y: 10.8, z: 7.953531}
+  m_Center: {x: 0, y: 0, z: -2.1055539}
+--- !u!114 &1300400537783379573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2379381572274587420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28485545646dca94287c0faee8661905, type: 3}
+  m_Script: {fileID: 11500000, guid: a5dd1c3342b44524c8851069fba7e2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -117,3 +139,4 @@ MonoBehaviour:
   speed: 0
   speedButton1: {fileID: 0}
   speedButton2: {fileID: 0}
+  otherScript: {fileID: 0}

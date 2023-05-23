@@ -20,6 +20,8 @@ public class BuildButtonScript : MonoBehaviour
             Helikopter.GetComponent<Button>().enabled = true;
             Schiff.GetComponent<Image>().enabled = true;
             Schiff.GetComponent<Button>().enabled = true;
+            PlayerPrefs.SetInt("bauen", 1);
+            
         }
 
         else
@@ -31,6 +33,8 @@ public class BuildButtonScript : MonoBehaviour
             Helikopter.GetComponent<Button>().enabled = false;
             Schiff.GetComponent<Image>().enabled = false;
             Schiff.GetComponent<Button>().enabled = false;
+            PlayerPrefs.SetInt("bauen", 0);
+
         }
         
 

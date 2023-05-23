@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5294191090068137819}
   - component: {fileID: 5362355261958950710}
-  - component: {fileID: 3595471749539146741}
+  - component: {fileID: 5439292009639319908}
+  - component: {fileID: 1657651295365621875}
   m_Layer: 0
   m_Name: Bloon V2 - Hellblau
   m_TagString: bloon
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5362355261958950710
 SpriteRenderer:
@@ -85,7 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3595471749539146741
+--- !u!65 &5439292009639319908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670499887301708127}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.8, y: 10.8, z: 8.473379}
+  m_Center: {x: 0, y: 0, z: 1.6576908}
+--- !u!114 &1657651295365621875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8670499887301708127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28485545646dca94287c0faee8661905, type: 3}
+  m_Script: {fileID: 11500000, guid: 64ad30a6a7a1da242979bb90a8c428e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
@@ -117,3 +139,4 @@ MonoBehaviour:
   speed: 0
   speedButton1: {fileID: 0}
   speedButton2: {fileID: 0}
+  otherScript: {fileID: 0}

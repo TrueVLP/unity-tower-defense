@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Spawner_mainNEU : MonoBehaviour, ISaveable
+public class Spawner_mainNEU : MonoBehaviour
 {
     public GameObject[] enemyPrefabs; // Array mit den zu spawnenden Gegner-Objekten
     public float spawnRadius = 5f; // Radius innerhalb dessen die Gegner spawnen sollen
@@ -13,17 +14,25 @@ public class Spawner_mainNEU : MonoBehaviour, ISaveable
     public int waveCount = 0; // Zähler für die Anzahl der Wellen
     public Transform spawnPoint; // Spawn-Punkt, an dem die Gegner spawnen sollen
     public TextMeshProUGUI roundText;
-    public TextMeshProUGUI heartText;
-    public int hearts = 100;
-
-    private void Start()
+   
+    void Start()
     {
+        if (PlayerPrefs.HasKey("rounds"))
+        {
+            waveCount = PlayerPrefs.GetInt("rounds");
+        }
+        else
+        {
+            waveCount = 0;
+            PlayerPrefs.SetInt("money", waveCount);
+        }
         StartCoroutine(SpawnWave()); // Startet die Coroutine für das Spawnen der Wellen
     }
 
     private IEnumerator SpawnWave()
     {
-        waveCount++; // Erhöht den Wellenzähler
+        waveCount++;
+        PlayerPrefs.SetInt("rounds", waveCount);
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
@@ -36,20 +45,15 @@ public class Spawner_mainNEU : MonoBehaviour, ISaveable
             Vector3 spawnPosition = spawnPoint.position + randomSpawnOffset;
             Quaternion spawnRotation = Quaternion.identity;
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
-
-            // Update round text
-            roundText.text = "" + waveCount;
-
-            heartText.text = "" + hearts;
-
             yield return new WaitForSeconds(spawnInterval);
         }
-    }
-
-    public void Save()
-    {
-        PlayerPrefs.SetInt("Welle", waveCount);
-        PlayerPrefs.SetInt("Health", hearts);
-
+        if (waveCount >= 5)
+        {
+            SceneManager.LoadScene(4);
+        }
+        if (waveCount < 5) // Überprüft, ob die aktuelle Welle die letzte ist
+        {
+            StartCoroutine(SpawnWave()); // Startet die Coroutine erneut für das Spawnen der nächsten Welle
+        }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2298301843669406029}
   m_Layer: 0
   m_Name: Panzer
-  m_TagString: Untagged
+  m_TagString: panzer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 4967011968148920405}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -152,9 +152,10 @@ MonoBehaviour:
   targetTag: bloon
   rotationSpeed: 5
   range: 10
-  projectilePrefab: {fileID: 579462436789678987, guid: f3c037f478f247441a21e9cbb2ed6e26, type: 3}
+  projectilePrefab: {fileID: 4203353869434614053, guid: c234614d7d30506438dea4489a4648e1, type: 3}
   spawnPoint: {fileID: 4967011968148920405}
   spawnRate: 1
+  rangeAbility: 0
 --- !u!1 &7558516680739298085
 GameObject:
   m_ObjectHideFlags: 0

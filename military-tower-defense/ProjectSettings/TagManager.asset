@@ -6,6 +6,10 @@ TagManager:
   tags:
   - bloon
   - pfeil
+  - ende
+  - panzer
+  - hubschrauber
+  - schiff
   layers:
   - Default
   - TransparentFX
