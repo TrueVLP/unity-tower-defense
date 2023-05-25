@@ -20,21 +20,24 @@ public class PfeilScript2 : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    
+
     void OnCollisionEnter(Collision collision)
     {
-        int money = PlayerPrefs.GetInt("money");
-        if(PlayerPrefs.GetInt("ability2") == 1)
+        if (collision.gameObject.CompareTag("bloon"))
         {
-            money = money + 40;
+            int money = PlayerPrefs.GetInt("money");
+            if (PlayerPrefs.GetInt("ability2") == 1)
+            {
+                money = money + 40;
+            }
+            else
+            {
+                money = money + 20;
+            }
+
+            PlayerPrefs.SetInt("money", money);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
-        else
-        {
-            money = money + 20;
-        }
-        
-        PlayerPrefs.SetInt("money", money);
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
     }
 }

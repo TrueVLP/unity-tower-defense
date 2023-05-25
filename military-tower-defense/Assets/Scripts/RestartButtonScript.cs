@@ -7,8 +7,11 @@ public class RestartButtonScript : MonoBehaviour
 {
     public void auführen()
     {
-
+        int played = PlayerPrefs.GetInt("PCounter");
+        int counter = PlayerPrefs.GetInt("Counter");
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("PCounter", played);
+        PlayerPrefs.SetInt("Counter", counter);
 
     }
 

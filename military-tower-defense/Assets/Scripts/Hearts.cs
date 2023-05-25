@@ -17,7 +17,7 @@ public class Hearts : MonoBehaviour
         }
         else
         {
-            hearts = 200;
+            hearts = 20;
             PlayerPrefs.SetInt("hearts", hearts);
         }
     }

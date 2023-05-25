@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class Spawner_mainNEU : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs; // Array mit den zu spawnenden Gegner-Objekten
-    public float spawnRadius = 5f; // Radius innerhalb dessen die Gegner spawnen sollen
-    public float spawnInterval = 1f; // Abstand zwischen den einzelnen Spawn-Wellen
-    public int enemiesPerWave = 5; // Anzahl der Gegner pro Welle
-    public int waveCount = 0; // Zähler für die Anzahl der Wellen
-    public Transform spawnPoint; // Spawn-Punkt, an dem die Gegner spawnen sollen
+    public GameObject[] enemyPrefabs;
+    public float spawnRadius = 5f;
+    public float spawnInterval = 1f;
+    public int enemiesPerWave = 5;
+    public int waveCount = 0;
+    public Transform spawnPoint;
     public TextMeshProUGUI roundText;
    
     void Start()
@@ -26,7 +26,7 @@ public class Spawner_mainNEU : MonoBehaviour
             waveCount = 0;
             PlayerPrefs.SetInt("money", waveCount);
         }
-        StartCoroutine(SpawnWave()); // Startet die Coroutine für das Spawnen der Wellen
+        StartCoroutine(SpawnWave());
     }
 
     private IEnumerator SpawnWave()
@@ -36,11 +36,9 @@ public class Spawner_mainNEU : MonoBehaviour
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
-            // Zufälligen Gegner auswählen
             int randomIndex = Random.Range(0, enemyPrefabs.Length);
             GameObject enemyPrefab = enemyPrefabs[randomIndex];
 
-            // Gegner an Spawn-Punkt spawnen
             Vector3 randomSpawnOffset = Random.insideUnitSphere * spawnRadius;
             Vector3 spawnPosition = spawnPoint.position + randomSpawnOffset;
             Quaternion spawnRotation = Quaternion.identity;
@@ -51,9 +49,9 @@ public class Spawner_mainNEU : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
-        if (waveCount < 5) // Überprüft, ob die aktuelle Welle die letzte ist
+        if (waveCount < 5)
         {
-            StartCoroutine(SpawnWave()); // Startet die Coroutine erneut für das Spawnen der nächsten Welle
+            StartCoroutine(SpawnWave());
         }
     }
 }

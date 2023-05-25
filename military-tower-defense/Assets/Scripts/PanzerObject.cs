@@ -37,8 +37,6 @@ public class PanzerObject : MonoBehaviour
             }
         }
 
-
-        // Orientierung des Panzers zum Ziel
         if (target != null)
         {
             Vector3 direction = target.position - transform.position;

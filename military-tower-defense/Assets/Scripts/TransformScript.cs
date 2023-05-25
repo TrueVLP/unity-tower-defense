@@ -8,7 +8,6 @@ public class TransformScript : MonoBehaviour
 
     void Start()
     {
-        // Setze das Transform-Objekt als Kind des GameObjects
         childTransform.SetParent(transform);
     }
 }

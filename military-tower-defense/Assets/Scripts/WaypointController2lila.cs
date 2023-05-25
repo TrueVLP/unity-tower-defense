@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class WaypointController2lila : MonoBehaviour
 {
-    public Transform[] waypoints; // Array of waypoints
+    public Transform[] waypoints;
     public int speed;
     public Hearts otherScript;
 
-    private int currentWaypointIndex = 0; // Index of the current waypoint
+    private int currentWaypointIndex = 0;
 
     void Start()
     {
@@ -32,17 +32,22 @@ public class WaypointController2lila : MonoBehaviour
         waypoints[15] = GameObject.Find("Waypoint (15)").transform;
     }
 
+
     void Update()
     {
         speed = PlayerPrefs.GetInt("speed");
-        // Move the GameObject towards the current waypoint
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
 
-        // Check if the GameObject has reached the current waypoint
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
-            // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        }
+
+        if (currentWaypointIndex == waypoints.Length - 1)
+        {
+            Destroy(gameObject);
+            int hearts = PlayerPrefs.GetInt("hearts") - 5;
+            PlayerPrefs.SetInt("hearts", hearts);
         }
     }
 }
