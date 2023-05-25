@@ -6,6 +6,9 @@ public class ArrowButtonScript : MonoBehaviour
 {
     public void auführen()
     {
+        int money = PlayerPrefs.GetInt("money");
+        money = money - 200;
+        PlayerPrefs.SetInt("money", money);
         PlayerPrefs.SetInt("ability3", 10);
     }
 }

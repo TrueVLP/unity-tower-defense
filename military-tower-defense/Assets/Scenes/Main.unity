@@ -5243,7 +5243,7 @@ MonoBehaviour:
   - {fileID: 6082400328489649443, guid: 67956d6c2371222409f790ef16672792, type: 3}
   spawnRadius: 0
   spawnInterval: 1
-  enemiesPerWave: 20
+  enemiesPerWave: 30
   waveCount: 0
   spawnPoint: {fileID: 1018381513}
   roundText: {fileID: 237523441}

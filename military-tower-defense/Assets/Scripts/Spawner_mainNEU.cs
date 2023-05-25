@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -36,13 +37,16 @@ public class Spawner_mainNEU : MonoBehaviour
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
-            int randomIndex = Random.Range(0, enemyPrefabs.Length);
-            GameObject enemyPrefab = enemyPrefabs[randomIndex];
+            if (PlayerPrefs.GetInt("speed") != 0)
+            {
+                int randomIndex = Random.Range(0, enemyPrefabs.Length);
+                GameObject enemyPrefab = enemyPrefabs[randomIndex];
 
-            Vector3 randomSpawnOffset = Random.insideUnitSphere * spawnRadius;
-            Vector3 spawnPosition = spawnPoint.position + randomSpawnOffset;
-            Quaternion spawnRotation = Quaternion.identity;
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+                Vector3 randomSpawnOffset = Random.insideUnitSphere * spawnRadius;
+                Vector3 spawnPosition = spawnPoint.position + randomSpawnOffset;
+                Quaternion spawnRotation = Quaternion.identity;
+                GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
         if (waveCount >= 5)

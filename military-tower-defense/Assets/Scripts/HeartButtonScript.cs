@@ -19,7 +19,7 @@ public class HeartButtonScript : MonoBehaviour
 
         int hearts = PlayerPrefs.GetInt("hearts");
 
-        hearts = hearts + 200;
+        hearts = hearts + 10;
 
         PlayerPrefs.SetInt("hearts", hearts);
     }
