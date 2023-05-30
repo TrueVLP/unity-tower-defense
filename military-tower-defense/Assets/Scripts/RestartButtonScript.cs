@@ -9,9 +9,13 @@ public class RestartButtonScript : MonoBehaviour
     {
         int played = PlayerPrefs.GetInt("PCounter");
         int counter = PlayerPrefs.GetInt("Counter");
+        int won = PlayerPrefs.GetInt("won");
+        int lose = PlayerPrefs.GetInt("lose");
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("PCounter", played);
         PlayerPrefs.SetInt("Counter", counter);
+        PlayerPrefs.SetInt("won", won);
+        PlayerPrefs.SetInt("lose", lose);
 
     }
 

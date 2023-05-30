@@ -18,14 +18,27 @@ public class PanzerObject : MonoBehaviour
 
     private Transform target;
 
-    private void Start()
+    void Start()
     {
-        PlayerPrefs.SetInt("ability3", 5);
-        
+        if(PlayerPrefs.HasKey(targetTag))
+        {
+            PlayerPrefs.GetInt("ability3");
+        }else
+        {
+            PlayerPrefs.SetInt("ability3", 5);
+        }
     }
     void Update()
     {
-        range = PlayerPrefs.GetInt("ability3");
+        if (PlayerPrefs.HasKey(targetTag))
+        {
+            range = PlayerPrefs.GetInt("ability3");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ability3", 5);
+            range = 5;
+        }
 
         if (target == null || Vector3.Distance(transform.position, target.position) > range)
         {
@@ -54,11 +67,6 @@ public class PanzerObject : MonoBehaviour
                 timer = 0f;
 
             }
-        }
-
-        if (rangeAbility)
-        {
-            range = 2f;
         }
     }
 

@@ -25,7 +25,7 @@ public class Hearts : MonoBehaviour
     {
         heartText.text = "" + PlayerPrefs.GetInt("hearts");
 
-        if (PlayerPrefs.GetInt("hearts") < 0)
+        if (PlayerPrefs.GetInt("hearts") <= 0)
         {
             SceneManager.LoadScene(3);
         }

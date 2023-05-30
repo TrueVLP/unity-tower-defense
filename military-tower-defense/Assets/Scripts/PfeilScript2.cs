@@ -9,11 +9,6 @@ public class PfeilScript2 : MonoBehaviour
 
     public int moneyability;
 
-    void Start()
-    {
-        PlayerPrefs.SetInt("ability2", 0);
-    }
-
     void Update()
     {
         Vector3 direction = new Vector3(transform.up.x, transform.up.y, 0);
@@ -26,11 +21,11 @@ public class PfeilScript2 : MonoBehaviour
         int money = PlayerPrefs.GetInt("money");
         if (PlayerPrefs.GetInt("ability2") == 1)
         {
-            money = money + 30;
+            money = money + 15;
         }
         else
         {
-            money = money + 20;
+            money = money + 10;
         }
 
         PlayerPrefs.SetInt("money", money);
