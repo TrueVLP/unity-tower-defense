@@ -5,11 +5,29 @@ using UnityEngine;
 
 public class S2Script : MonoBehaviour
 {
-    public TextMeshProUGUI playedText;
+    public TextMeshProUGUI S2;
+
+    int trophyRecord;
 
     private void Start()
     {
-        int counter = PlayerPrefs.GetInt("Counter", 0);
-        playedText.text = "" + counter + "x";
+        int trophy = PlayerPrefs.GetInt("trophy");
+
+        if(PlayerPrefs.HasKey("trophyRecord"))
+        {
+            trophyRecord = PlayerPrefs.GetInt("trophyRecord");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("trophyRecord", 0);
+            trophyRecord = PlayerPrefs.GetInt("trophyRecord");
+        }
+
+        if(trophy >= trophyRecord)
+        {
+            PlayerPrefs.SetInt("trophyRecord", trophy);
+        }
+
+        S2.text = "" + PlayerPrefs.GetInt("trophyRecord");
     }
 }

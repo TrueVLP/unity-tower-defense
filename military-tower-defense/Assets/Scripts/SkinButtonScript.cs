@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackButtonScript : MonoBehaviour
+public class SkinButtonScript : MonoBehaviour
 {
-    public void BackClick()
+    public void SkinClick()
     {
-        
-        SceneManager.LoadScene(0);
-
+        SceneManager.LoadScene(5);
     }
 }

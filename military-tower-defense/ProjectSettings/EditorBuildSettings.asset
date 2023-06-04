@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Winning Scene.unity
     guid: 00795432e5395ac4db5e50cca61a834f
+  - enabled: 1
+    path: Assets/Scenes/Skins.unity
+    guid: 227ee764cf2f205429b56b47ac14cee4
   m_configObjects: {}
