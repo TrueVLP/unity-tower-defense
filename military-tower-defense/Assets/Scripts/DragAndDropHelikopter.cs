@@ -6,46 +6,48 @@ public class DragAndDropHelikopter : MonoBehaviour
 {
     private bool inBuildMode = false;
 
-    private int Counter1 = 0;
-
     public GameObject ObjectToSpawn;
 
-
-    void Start()
-    {
-        if (PlayerPrefs.HasKey("counter2"))
-        {
-            Counter1 = PlayerPrefs.GetInt("counter2");
-        }
-        else
-        {
-            Counter1 = 0;
-            PlayerPrefs.SetInt("counter2", Counter1);
-        }
-
-    }
+    public UnityEngine.UI.Image NotEnoughMoney;
 
     public void EnterBuildMode()
     {
         inBuildMode = true;
 
+        PlayerPrefs.SetInt("bp", 1);
+
     }
 
     void Update()
     {
-        if (inBuildMode && Input.GetMouseButtonDown(0) && PlayerPrefs.GetInt("counter2") == 0)
+        if (inBuildMode && Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 5;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-            Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
-            inBuildMode = false;
-            Counter1 = PlayerPrefs.GetInt("counter2");
-            Counter1++;
-            PlayerPrefs.SetInt("counter2", Counter1);
             int money = PlayerPrefs.GetInt("money");
             money = money - 200;
-            PlayerPrefs.SetInt("money", money);
+            if (money >= 0)
+            {
+                PlayerPrefs.SetInt("money", money);
+                Vector3 mousePos = Input.mousePosition;
+                mousePos.z = 5;
+                Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+                Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
+                inBuildMode = false;
+            }else
+            {
+                NotEnoughMoney.GetComponent<UnityEngine.UI.Image>().enabled = true;
+                StartCoroutine(Delay2(1f));
+            }
+            
         }
+
+        PlayerPrefs.SetInt("bp", 0);
+    }
+
+    IEnumerator Delay2(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        NotEnoughMoney.GetComponent<UnityEngine.UI.Image>().enabled = false;
+
     }
 }

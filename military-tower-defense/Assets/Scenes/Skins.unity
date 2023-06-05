@@ -488,7 +488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 211036309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1249939011}
+        m_TargetAssemblyTypeName: SkinController, Assembly-CSharp
+        m_MethodName: Skin2Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &211036309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1332,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 946549423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1249939011}
+        m_TargetAssemblyTypeName: SkinController, Assembly-CSharp
+        m_MethodName: Skin1Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &946549423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2452,6 +2476,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925435466}
   m_CullTransparentMesh: 1
+--- !u!1001 &1933803184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 220780721699356184, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_Name
+      value: MenuMusic Source
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.609563
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24808788
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.566175
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851932324529146358, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f68a3b5b0d472da428f810a44ce88f89, type: 3}
 --- !u!1 &2008872913
 GameObject:
   m_ObjectHideFlags: 0

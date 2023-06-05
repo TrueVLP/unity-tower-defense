@@ -12,7 +12,7 @@ public class Spawner_mainNEU : MonoBehaviour
     public float spawnRadius = 5f;
     public float spawnInterval = 1f;
     public int enemiesPerWave = 5;
-    public int waveCount = 0;
+    public int waveCount = 1;
     public Transform spawnPoint;
     public TextMeshProUGUI roundText;
    
@@ -32,10 +32,16 @@ public class Spawner_mainNEU : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
-        waveCount++;
-        PlayerPrefs.SetInt("rounds", waveCount);
+        PlayerPrefs.SetInt("speed", 0);
 
-        for (int i = 0; i < enemiesPerWave; i++)
+        GameObject enemyPrefab2 = enemyPrefabs[8];
+
+        Vector3 randomSpawnOffset2 = Random.insideUnitSphere * spawnRadius;
+        Vector3 spawnPosition2 = spawnPoint.position + randomSpawnOffset2;
+        Quaternion spawnRotation2 = Quaternion.identity;
+        Instantiate(enemyPrefab2, spawnPosition2, spawnRotation2);
+
+        for (int i = 1; i < enemiesPerWave; i++)
         {
             if (PlayerPrefs.GetInt("speed") != 0)
             {
@@ -57,5 +63,10 @@ public class Spawner_mainNEU : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
         }
+
+        waveCount++;
+
+        PlayerPrefs.SetInt("rounds", waveCount);
+
     }
 }

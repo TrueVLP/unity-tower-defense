@@ -21,6 +21,14 @@ public class SpeedObjectScript : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        if (PlayerPrefs.GetInt("bp") == 1)
+        {
+            PlayerPrefs.SetInt("speed", 0);
+        }
+    }
+
     public void Speedbutton1()
     {
         PlayerPrefs.SetInt("speed", 3);

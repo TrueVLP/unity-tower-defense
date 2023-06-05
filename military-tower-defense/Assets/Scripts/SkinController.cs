@@ -14,7 +14,6 @@ public class SkinController : MonoBehaviour
 
     void Start()
     {
-
         if (PlayerPrefs.GetInt("trophyRecord") >= 400)
         {
             PanzerSkin1.GetComponent<Button>().enabled = true;
@@ -32,5 +31,15 @@ public class SkinController : MonoBehaviour
             PanzerSkin1T.gameObject.SetActive(true);
         }
 
+    }
+
+    public void Skin1Click()
+    {
+        PlayerPrefs.SetInt("p", 0);
+    }
+
+    public void Skin2Click()
+    {
+        PlayerPrefs.SetInt("p", 1);
     }
 }

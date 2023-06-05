@@ -50,6 +50,11 @@ public class TrophySubScript : MonoBehaviour
 
         TrophyCount = PlayerPrefs.GetInt("trophy") - 20;
 
+        if (TrophyCount < 0)
+        {
+            TrophyCount = 0;
+        }
+
         PlayerPrefs.SetInt("trophy", TrophyCount);
 
         Trophy1.text = "" + TrophyCount;

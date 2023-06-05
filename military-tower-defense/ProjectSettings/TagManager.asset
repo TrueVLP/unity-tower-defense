@@ -10,6 +10,9 @@ TagManager:
   - panzer
   - hubschrauber
   - schiff
+  - street
+  - lake
+  - both
   layers:
   - Default
   - TransparentFX

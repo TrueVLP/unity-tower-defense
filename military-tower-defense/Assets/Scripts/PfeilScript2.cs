@@ -15,7 +15,6 @@ public class PfeilScript2 : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-
     void OnCollisionEnter(Collision collision)
     {
         int money = PlayerPrefs.GetInt("money");
