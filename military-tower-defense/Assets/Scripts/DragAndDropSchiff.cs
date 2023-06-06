@@ -12,6 +12,8 @@ public class DragAndDropSchiff : MonoBehaviour
 
     public GameObject ObjectToSpawn;
 
+    public GameObject ObjectToSpawn2;
+
     public bool bauen = false;
 
     public GameObject[] streets;
@@ -87,7 +89,15 @@ public class DragAndDropSchiff : MonoBehaviour
                     PlayerPrefs.SetInt("money", money);
                     mousePos.z = 5;
                     Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-                    Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
+                    if (PlayerPrefs.GetInt("s") == 0)
+                    {
+                        Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
+                    }
+
+                    if (PlayerPrefs.GetInt("s") == 1)
+                    {
+                        Instantiate(ObjectToSpawn2, worldPos, Quaternion.identity);
+                    }
                     inBuildMode = false;
                     // Find and enable all objects with the tag "street"
                     GameObject[] streets = GameObject.FindGameObjectsWithTag("both");

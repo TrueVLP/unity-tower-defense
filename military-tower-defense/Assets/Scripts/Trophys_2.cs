@@ -8,6 +8,14 @@ public class Trophys_2 : MonoBehaviour
     public TextMeshProUGUI Trophys;
     void Start()
     {
-        Trophys.text = " " + PlayerPrefs.GetInt("trophyRecord");
+        if (PlayerPrefs.HasKey("trophyRecord"))
+        {
+            Trophys.text = " " + PlayerPrefs.GetInt("trophyRecord");
+        }
+        else
+        {
+            Trophys.text = "0";
+        }
+        
     }
 }

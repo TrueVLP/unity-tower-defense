@@ -9,7 +9,7 @@ public class PanzerObject : MonoBehaviour
 
     public string targetTag = "bloon";
     public float rotationSpeed = 5f;
-    public float range;
+    public float range = 5f;
     public GameObject projectilePrefab;
     public Transform spawnPoint;
     public float spawnRate = 1f;
@@ -18,27 +18,8 @@ public class PanzerObject : MonoBehaviour
 
     private Transform target;
 
-    void Start()
-    {
-        if(PlayerPrefs.HasKey(targetTag))
-        {
-            PlayerPrefs.GetInt("ability3");
-        }else
-        {
-            PlayerPrefs.SetInt("ability3", 5);
-        }
-    }
     void Update()
     {
-        if (PlayerPrefs.HasKey(targetTag))
-        {
-            range = PlayerPrefs.GetInt("ability3");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("ability3", 5);
-            range = 5;
-        }
 
         if (target == null || Vector3.Distance(transform.position, target.position) > range)
         {
@@ -61,7 +42,7 @@ public class PanzerObject : MonoBehaviour
             }
 
             timer += Time.deltaTime;
-            if (timer >= spawnRate && PlayerPrefs.GetInt("speed") > 1 && (direction.magnitude <= range))
+            if (timer >= spawnRate && PlayerPrefs.GetInt("speed") >= 1 && (direction.magnitude <= range))
             {
                 Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
                 timer = 0f;

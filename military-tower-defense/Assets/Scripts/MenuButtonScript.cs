@@ -11,7 +11,6 @@ public class MenuButtonScript : MonoBehaviour
     public GameObject BuildButton;
     public GameObject HeartButton;
     public GameObject MoneyButton;
-    public GameObject ArrowButton;
 
     public void MenuClick()
     {
@@ -23,14 +22,12 @@ public class MenuButtonScript : MonoBehaviour
             BuildButton.GetComponent<Image>().enabled = true;
             HeartButton.GetComponent<Image>().enabled = true;
             MoneyButton.GetComponent<Image>().enabled = true;
-            ArrowButton.GetComponent<Image>().enabled = true;
             Homebutton.GetComponent<Button>().enabled = true;
             SpeedButton1.GetComponent<Button>().enabled = true;
             SpeedButton2.GetComponent<Button>().enabled = true;
             BuildButton.GetComponent<Button>().enabled = true;
             HeartButton.GetComponent<Button>().enabled = true;
             MoneyButton.GetComponent<Button>().enabled = true;
-            ArrowButton.GetComponent<Button>().enabled = true;
 
         }
 
@@ -42,14 +39,12 @@ public class MenuButtonScript : MonoBehaviour
             BuildButton.GetComponent<Image>().enabled = false;
             HeartButton.GetComponent<Image>().enabled = false;
             MoneyButton.GetComponent<Image>().enabled = false;
-            ArrowButton.GetComponent<Image>().enabled = false;
             Homebutton.GetComponent<Button>().enabled = false;
             SpeedButton1.GetComponent<Button>().enabled = false;
             SpeedButton2.GetComponent<Button>().enabled = false;
             BuildButton.GetComponent<Button>().enabled = false;
             HeartButton.GetComponent <Button>().enabled = false;
             MoneyButton.GetComponent <Button>().enabled = false;
-            ArrowButton.GetComponent <Button>().enabled = false;
         }
     }
 }

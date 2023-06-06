@@ -17,7 +17,7 @@ public class RoundCounterScript : MonoBehaviour
         }
         else
         {
-            RoundCounter = 0;
+            RoundCounter = 1;
             PlayerPrefs.SetInt("rounds", RoundCounter);
         }
 

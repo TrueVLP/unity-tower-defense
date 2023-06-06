@@ -8,6 +8,10 @@ public class DragAndDropHelikopter : MonoBehaviour
 
     public GameObject ObjectToSpawn;
 
+    public GameObject ObjectToSpawn2;
+
+    public GameObject ObjectToSpawn3;
+
     public UnityEngine.UI.Image NotEnoughMoney;
 
     public void EnterBuildMode()
@@ -20,6 +24,8 @@ public class DragAndDropHelikopter : MonoBehaviour
 
     void Update()
     {
+        Vector3 mousePos = Input.mousePosition;
+
         if (inBuildMode && Input.GetMouseButtonDown(0))
         {
             int money = PlayerPrefs.GetInt("money");
@@ -27,12 +33,25 @@ public class DragAndDropHelikopter : MonoBehaviour
             if (money >= 0)
             {
                 PlayerPrefs.SetInt("money", money);
-                Vector3 mousePos = Input.mousePosition;
                 mousePos.z = 5;
                 Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-                Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
+
+                if (PlayerPrefs.GetInt("h") == 0)
+                {
+                    Instantiate(ObjectToSpawn, worldPos, Quaternion.identity);
+                }
+
+                if (PlayerPrefs.GetInt("h") == 1)
+                {
+                    Instantiate(ObjectToSpawn2, worldPos, Quaternion.identity);
+                }
+                if (PlayerPrefs.GetInt("h") == 2)
+                {
+                    Instantiate(ObjectToSpawn3, worldPos, Quaternion.identity);
+                }
                 inBuildMode = false;
-            }else
+            }
+            else
             {
                 NotEnoughMoney.GetComponent<UnityEngine.UI.Image>().enabled = true;
                 StartCoroutine(Delay2(1f));

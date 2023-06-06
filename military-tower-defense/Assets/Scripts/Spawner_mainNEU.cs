@@ -24,7 +24,7 @@ public class Spawner_mainNEU : MonoBehaviour
         }
         else
         {
-            waveCount = 0;
+            waveCount = 1;
             PlayerPrefs.SetInt("money", waveCount);
         }
         StartCoroutine(SpawnWave());
@@ -32,7 +32,6 @@ public class Spawner_mainNEU : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
-        PlayerPrefs.SetInt("speed", 0);
 
         GameObject enemyPrefab2 = enemyPrefabs[8];
 

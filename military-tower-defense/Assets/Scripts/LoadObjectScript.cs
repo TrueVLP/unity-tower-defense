@@ -9,6 +9,9 @@ public class LoadObjectScript : MonoBehaviour
     public GameObject hubschrauber;
     public GameObject schiff;
     public GameObject panzer2;
+    public GameObject hubschrauber2;
+    public GameObject hubschrauber3;
+    public GameObject schiff2;
 
     void Start()
     {
@@ -34,7 +37,20 @@ public class LoadObjectScript : MonoBehaviour
         for (int i = 0; i < hubschrauberCount; i++)
         {
             Vector3 position = new Vector3(PlayerPrefs.GetFloat("hubschrauberx" + i), PlayerPrefs.GetFloat("hubschraubery" + i), PlayerPrefs.GetFloat("hubschrauberz" + i));
-            Instantiate(hubschrauber, position, Quaternion.identity);
+            if (PlayerPrefs.GetInt("h") == 0)
+            {
+                Instantiate(hubschrauber, position, Quaternion.identity);
+            }
+
+            if (PlayerPrefs.GetInt("h") == 1)
+            {
+                Instantiate(hubschrauber2, position, Quaternion.identity);
+            }
+
+            if (PlayerPrefs.GetInt("h") == 2)
+            {
+                Instantiate(hubschrauber3, position, Quaternion.identity);
+            }
         }
 
         // Load all saved schiffs
@@ -42,7 +58,16 @@ public class LoadObjectScript : MonoBehaviour
         for (int i = 0; i < schiffCount; i++)
         {
             Vector3 position = new Vector3(PlayerPrefs.GetFloat("schiffx" + i), PlayerPrefs.GetFloat("schiffy" + i), PlayerPrefs.GetFloat("schiffz" + i));
-            Instantiate(schiff, position, Quaternion.identity);
+
+            if (PlayerPrefs.GetInt("s") == 0)
+            {
+                Instantiate(schiff, position, Quaternion.identity);
+            }
+
+            if (PlayerPrefs.GetInt("s") == 1)
+            {
+                Instantiate(schiff2, position, Quaternion.identity);
+            }
         }
     }
 
