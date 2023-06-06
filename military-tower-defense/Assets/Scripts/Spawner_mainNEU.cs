@@ -48,7 +48,7 @@ public class Spawner_mainNEU : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("speed") != 0)
             {
-                int randomIndex = Random.Range(0, enemyPrefabs.Length);
+                int randomIndex = Random.Range(0, (enemyPrefabs.Length - 1));
                 GameObject enemyPrefab = enemyPrefabs[randomIndex];
 
                 Vector3 randomSpawnOffset = Random.insideUnitSphere * spawnRadius;
