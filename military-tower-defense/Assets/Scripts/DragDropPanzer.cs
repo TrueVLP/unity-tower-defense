@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class DragAndDropPanzer : MonoBehaviour
 {
+    //Script zum bedienen des Panzer Spawns
     private bool inBuildMode = false;
 
     public GameObject ObjectToSpawn;

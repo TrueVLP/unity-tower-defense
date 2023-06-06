@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RoundCounterScript : MonoBehaviour
 {
+
+    //Script zun setzn der Rundne während dem Kampf
     public int RoundCounter;
     public TextMeshProUGUI RoundsText;
 

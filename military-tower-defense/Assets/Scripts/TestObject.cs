@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TestObject : MonoBehaviour
 {
+
+    //DIENT AUSSCHLIESSlich ZUM TESTEN!!!
     public void test1Click()
     {
         PlayerPrefs.SetInt("trophy", 400);

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Spawner_mainNEU : MonoBehaviour
 {
+    //Objekte die, die Wellen und das Spawnen in der Main Methode kümmern
     public GameObject[] enemyPrefabs;
     public float spawnRadius = 5f;
     public float spawnInterval = 1f;
@@ -16,6 +17,8 @@ public class Spawner_mainNEU : MonoBehaviour
     public Transform spawnPoint;
     public TextMeshProUGUI roundText;
    
+
+    //holt sich gespeicherte Runden und startet die Wellen
     void Start()
     {
         if (PlayerPrefs.HasKey("rounds"))
@@ -30,6 +33,7 @@ public class Spawner_mainNEU : MonoBehaviour
         StartCoroutine(SpawnWave());
     }
 
+    //Verhalten der Wellen
     private IEnumerator SpawnWave()
     {
 

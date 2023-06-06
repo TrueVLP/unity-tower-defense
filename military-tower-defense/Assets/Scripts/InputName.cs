@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InputName : MonoBehaviour
 {
+    //Script zum speichern und eintragen des Namens
     public TMP_InputField inputField;
 
     void Start()

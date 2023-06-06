@@ -7,11 +7,14 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class TrophySubScript : MonoBehaviour
 {
+
+    //Objekte mit denen Tropähen im Fall eines verlorenen Kampfes
     public TextMeshProUGUI Trophy1;
     public TextMeshProUGUI Trophy2;
     public GameObject Image2;
     public int TrophyCount;
 
+    //Animation zur Abziehung von Tropähen
     void Start()
     {
         Trophy2.text = "";
@@ -27,6 +30,7 @@ public class TrophySubScript : MonoBehaviour
 
     }
 
+    //Teil der Animation
     IEnumerator ShowAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -35,6 +39,7 @@ public class TrophySubScript : MonoBehaviour
         Image2.GetComponent<UnityEngine.UI.Image>().enabled = true;
     }
 
+    //Teil der Animation
     IEnumerator RemoveAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -44,6 +49,7 @@ public class TrophySubScript : MonoBehaviour
 
     }
 
+    //Teil der Animation
     IEnumerator ChangeTrophy(float delay)
     {
         yield return new WaitForSeconds(delay);

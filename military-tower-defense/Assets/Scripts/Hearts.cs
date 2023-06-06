@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Hearts : MonoBehaviour
 {
+    //Script zum steuren der Herzen
     public int hearts;
     public TextMeshProUGUI heartText;
 

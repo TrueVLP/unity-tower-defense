@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PfeilScript2 : MonoBehaviour
 {
+
+    //Script zum bewegen des pfeils
+
     public float speed = 10f;
 
     public int moneyability;

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class S4Script : MonoBehaviour
 {
+
+    //Script zun setzn der Losing Statistic in der Statistic Szene
     public TextMeshProUGUI LoseText;
 
     private void Start()

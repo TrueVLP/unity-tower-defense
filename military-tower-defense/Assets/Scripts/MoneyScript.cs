@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MoneyScript : MonoBehaviour
 {
-
+    //Script zum handeling des Geldes
     public TextMeshProUGUI moneyText;
 
     public int money;

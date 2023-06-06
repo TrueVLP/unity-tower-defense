@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoneyButtonScript : MonoBehaviour
 {
-
+    //Script zum ändern der Belohnung
     public UnityEngine.UI.Image NotEnoughMoney;
 
     public void ausführen()

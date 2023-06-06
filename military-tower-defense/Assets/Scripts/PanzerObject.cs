@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PanzerObject : MonoBehaviour
 {
+    //Script zum bedienen der Panzer, Helikopter und Schiffe
 
     public string targetTag = "bloon";
     public float rotationSpeed = 5f;

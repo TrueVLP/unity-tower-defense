@@ -27,11 +27,13 @@ public class Spawner_Menu : MonoBehaviour
     public float minSpawnTime = 1.0f; // Minimale Zeit zwischen zwei Spawns
     public float maxSpawnTime = 5.0f; // Maximale Zeit zwischen zwei Spawns
 
+    //Spawnt die Objekte im Hauptmenü
     void Start()
     {
         StartCoroutine(SpawnObjectsAtRandomTimes());
     }
 
+    //Schleife zum spawnen der Ballone
     IEnumerator SpawnObjectsAtRandomTimes()
     {
         while (true)

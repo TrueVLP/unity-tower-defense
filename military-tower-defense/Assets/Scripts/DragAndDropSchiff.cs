@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class DragAndDropSchiff : MonoBehaviour
 {
+    //Script zum bedienen des Schiff Spawns
     private bool inBuildMode = false;
 
     public GameObject ObjectToSpawn;

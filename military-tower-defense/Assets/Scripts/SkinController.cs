@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class SkinController : MonoBehaviour
 {
+
+    //Objekte die mit der Skinauswahl bedient werden müssen
     public Button PanzerSkin1;
 
     public TextMeshProUGUI PanzerSkin1T;
@@ -31,6 +33,7 @@ public class SkinController : MonoBehaviour
 
     public Image SchiffSkin1I;
 
+    //Überprüft die Tropähen und schaltet die freigeschalteten frei
     void Start()
     {
         
@@ -103,6 +106,7 @@ public class SkinController : MonoBehaviour
 
     }
 
+    //Methoden für die Buttons um zu definieren welche Skins verwendet werden
     public void Skin1Click()
     {
         PlayerPrefs.SetInt("p", 0);

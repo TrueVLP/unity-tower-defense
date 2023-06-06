@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Play_button : MonoBehaviour
 {
+
+    //Script zum wechseln in die Main Methode und zum speichern gewisser Statistiken
     public void PlayClick()
     {
         int counter = PlayerPrefs.GetInt("PCounter", 0);

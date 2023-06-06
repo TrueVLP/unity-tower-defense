@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LoseScript : MonoBehaviour
 {
-
+    //Script zum handeling der verlorenen Kämpfe
     int lose;
 
     void Start()

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SpeedObjectScript : MonoBehaviour
 {
+    //speed variable zum Zwischenspeichern
     public int speed;
 
+
+    //holt sich, wenn vorhanden das Speed aus dem Playerprefab
     void Start()
     {
 
@@ -21,6 +24,7 @@ public class SpeedObjectScript : MonoBehaviour
 
     }
 
+    //Überprüft ob gerade gebaut wird
     void Update()
     {
         if (PlayerPrefs.GetInt("bp") == 1)
@@ -29,11 +33,13 @@ public class SpeedObjectScript : MonoBehaviour
         }
     }
 
+    //Setzt das speed auf 3
     public void Speedbutton1()
     {
         PlayerPrefs.SetInt("speed", 3);
     }
 
+    //Setzt das speed auf 1
     public void Speedbutton2()
     {
         PlayerPrefs.SetInt("speed", 1);

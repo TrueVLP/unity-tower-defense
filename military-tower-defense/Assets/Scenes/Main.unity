@@ -2835,6 +2835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyScript: {fileID: 0}
   heartScript: {fileID: 0}
+  NotEnoughMoney: {fileID: 367902584}
 --- !u!1 &459253397
 GameObject:
   m_ObjectHideFlags: 0

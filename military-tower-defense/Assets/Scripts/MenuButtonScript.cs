@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MenuButtonScript : MonoBehaviour
 {
+    //Script zum zeigen/nicht zeigen der unteren Menüpunkte
     public GameObject Homebutton;
     public GameObject SpeedButton1;
     public GameObject SpeedButton2;

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class S2Script : MonoBehaviour
 {
+
+    //Script zun setzn des Tropähenrekordes in der Statistic Szene
+
     public TextMeshProUGUI S2;
 
     int trophyRecord;

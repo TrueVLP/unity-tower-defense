@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BuildButtonScript : MonoBehaviour
 {
+    //Script zum zeigen des Bau Menüs
     public GameObject Panzer;
     public GameObject Helikopter;
     public GameObject Schiff;

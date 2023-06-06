@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoadObjectScript : MonoBehaviour
 {
-
+    //Script zum Laden und speichern aller Objekte
     public GameObject panzer;
     public GameObject hubschrauber;
     public GameObject schiff;
@@ -15,7 +15,6 @@ public class LoadObjectScript : MonoBehaviour
 
     void Start()
     {
-        // Load all saved panzers
         int panzerCount = PlayerPrefs.GetInt("panzerCount", 0);
         for (int i = 0; i < panzerCount; i++)
         {
@@ -32,7 +31,6 @@ public class LoadObjectScript : MonoBehaviour
             }
         }
 
-        // Load all saved hubschraubers
         int hubschrauberCount = PlayerPrefs.GetInt("hubschrauberCount", 0);
         for (int i = 0; i < hubschrauberCount; i++)
         {
@@ -53,7 +51,6 @@ public class LoadObjectScript : MonoBehaviour
             }
         }
 
-        // Load all saved schiffs
         int schiffCount = PlayerPrefs.GetInt("schiffCount", 0);
         for (int i = 0; i < schiffCount; i++)
         {
@@ -73,7 +70,6 @@ public class LoadObjectScript : MonoBehaviour
 
     void Update()
     {
-        // Save all panzers
         GameObject[] panzers = GameObject.FindGameObjectsWithTag("panzer");
         PlayerPrefs.SetInt("panzerCount", panzers.Length);
         for (int i = 0; i < panzers.Length; i++)
@@ -84,7 +80,6 @@ public class LoadObjectScript : MonoBehaviour
             PlayerPrefs.SetFloat("panzerz" + i, position.z);
         }
 
-        // Save all hubschraubers
         GameObject[] hubschraubers = GameObject.FindGameObjectsWithTag("hubschrauber");
         PlayerPrefs.SetInt("hubschrauberCount", hubschraubers.Length);
         for (int i = 0; i < hubschraubers.Length; i++)
@@ -95,7 +90,6 @@ public class LoadObjectScript : MonoBehaviour
             PlayerPrefs.SetFloat("hubschrauberz" + i, position.z);
         }
 
-        // Save all schiffs
         GameObject[] schiffs = GameObject.FindGameObjectsWithTag("schiff");
         PlayerPrefs.SetInt("schiffCount", schiffs.Length);
         for (int i = 0; i < schiffs.Length; i++)

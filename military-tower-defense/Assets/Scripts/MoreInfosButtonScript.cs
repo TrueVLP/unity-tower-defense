@@ -6,6 +6,8 @@ using UnityEngine;
 public class MoreInfosButtonScript : MonoBehaviour
 {
 
+    //Script zum wechseln auf die offizielle Website
+
     public AudioSource click;
     public void MoreInfosClick()
     {

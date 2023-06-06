@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class WaypointController2hellblau : MonoBehaviour
 {
+    //Objekte die zum fortbewegen eines bunten Ballons dienen
     public Transform[] waypoints;
     public int speed;
     public Hearts otherScript;
 
     private int currentWaypointIndex = 0;
 
+    //Sucht sich alle Wegpunkte auf der Karte
     void Start()
     {
         speed = PlayerPrefs.GetInt("speed");
@@ -32,7 +34,7 @@ public class WaypointController2hellblau : MonoBehaviour
         waypoints[15] = GameObject.Find("Waypoint (15)").transform;
     }
 
-
+    //bewegt sich von Wegpunkt zu Wegpunkt und zieht beim letzten Wegpunkt die definierten Herzen ab
     void Update()
     {
         speed = PlayerPrefs.GetInt("speed");

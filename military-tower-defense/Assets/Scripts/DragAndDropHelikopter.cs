@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DragAndDropHelikopter : MonoBehaviour
 {
+
+    //Script zum bedienen des Helikopter Spawns
     private bool inBuildMode = false;
 
     public GameObject ObjectToSpawn;

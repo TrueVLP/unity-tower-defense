@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class S1Script : MonoBehaviour
 {
+
+    //Script zun setzn der Play Statistic in der Statistic Szene
     public TextMeshProUGUI startedText;
 
     private void Start()

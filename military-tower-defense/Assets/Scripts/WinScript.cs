@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class WinScript : MonoBehaviour
 {
+
+    //Variable zum speichern der Anzahl der Siege
     int won;
 
-
+    //Diese Methode holt sich gegebenenfalls eine gespeicherte won-zahl und speichert die neue won-zahl im Playerprefab
     void Start()
     {
 
