@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: bloon
   rotationSpeed: 5
-  range: 10
+  range: 15
   projectilePrefab: {fileID: 2993529361147213156, guid: bf85e063e2e059d4abc85cf2f46fbacd, type: 3}
   spawnPoint: {fileID: 1138072890684349842}
   spawnRate: 1

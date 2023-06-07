@@ -28,7 +28,7 @@ public class Spawner_mainNEU : MonoBehaviour
         else
         {
             waveCount = 1;
-            PlayerPrefs.SetInt("money", waveCount);
+            PlayerPrefs.SetInt("rounds", waveCount);
         }
         StartCoroutine(SpawnWave());
     }
