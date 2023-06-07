@@ -39,15 +39,17 @@ public class Spawner_mainNEU : MonoBehaviour
 
         GameObject enemyPrefab2 = enemyPrefabs[8];
 
-        Vector3 randomSpawnOffset2 = Random.insideUnitSphere * spawnRadius;
-        Vector3 spawnPosition2 = spawnPoint.position + randomSpawnOffset2;
-        Quaternion spawnRotation2 = Quaternion.identity;
-        Instantiate(enemyPrefab2, spawnPosition2, spawnRotation2);
-
         for (int i = 1; i < enemiesPerWave; i++)
         {
             if (PlayerPrefs.GetInt("speed") != 0)
             {
+                if (i == 1)
+                {
+                    Vector3 randomSpawnOffset2 = Random.insideUnitSphere * spawnRadius;
+                    Vector3 spawnPosition2 = spawnPoint.position + randomSpawnOffset2;
+                    Quaternion spawnRotation2 = Quaternion.identity;
+                    Instantiate(enemyPrefab2, spawnPosition2, spawnRotation2);
+                }
                 int randomIndex = Random.Range(0, (enemyPrefabs.Length - 1));
                 GameObject enemyPrefab = enemyPrefabs[randomIndex];
 

@@ -76,6 +76,12 @@ public class DragAndDropSchiff : MonoBehaviour
                 // Do not build
                 CantBuildHere.GetComponent<Image>().enabled = true;
                 StartCoroutine(Delay(1f));
+                PlayerPrefs.SetInt("bp", 0);
+                inBuildMode = false;
+                foreach (GameObject street in streets)
+                {
+                    street.SetActive(false);
+                }
 
             }
             else
@@ -111,6 +117,12 @@ public class DragAndDropSchiff : MonoBehaviour
                 {
                     NotEnoughMoney.GetComponent<Image>().enabled = true;
                     StartCoroutine(Delay2(1f));
+                    PlayerPrefs.SetInt("bp", 0);
+                    inBuildMode = false;
+                    foreach (GameObject street in streets)
+                    {
+                        street.SetActive(false);
+                    }
                 }
             }
         }

@@ -57,6 +57,8 @@ public class DragAndDropHelikopter : MonoBehaviour
             {
                 NotEnoughMoney.GetComponent<UnityEngine.UI.Image>().enabled = true;
                 StartCoroutine(Delay2(1f));
+                PlayerPrefs.SetInt("bp", 0);
+                inBuildMode = false;
             }
             
         }

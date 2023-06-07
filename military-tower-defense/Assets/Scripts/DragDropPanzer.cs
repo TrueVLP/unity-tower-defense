@@ -28,14 +28,12 @@ public class DragAndDropPanzer : MonoBehaviour
 
     void Start()
     {
-        // Find and enable all objects with the tag "street"
         streets = GameObject.FindGameObjectsWithTag("street");
         foreach (GameObject street in streets)
         {
             street.SetActive(false);
         }
 
-        // Find and enable all objects with the tag "lake"
         lakes = GameObject.FindGameObjectsWithTag("lake");
         foreach (GameObject lake in lakes)
         {
@@ -75,21 +73,28 @@ public class DragAndDropPanzer : MonoBehaviour
 
         if (inBuildMode && Input.GetMouseButtonDown(0))
         {
-            // Check if the mouse pointer is colliding with an object with the specified tags
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit) && (hit.collider.tag == "lake" || Physics.Raycast(ray, out hit) && hit.collider.tag == "street"))
             {
-                // The mouse pointer is colliding with an object with one of the specified tags
-                // Do not build
                 CantBuildHere.GetComponent<UnityEngine.UI.Image>().enabled = true;
                 StartCoroutine(Delay(1f));
+                inBuildMode = false;
+                PlayerPrefs.SetInt("bp", 0);
+
+                foreach (GameObject street in streets)
+                {
+                    street.SetActive(false);
+                }
+
+                foreach (GameObject lake in lakes)
+                {
+                    lake.SetActive(false);
+                }
 
             }
             else
             {
-                // The mouse pointer is not colliding with an object with one of the specified tags
-                // Build
                 Vector3 mousePos = Input.mousePosition;
                 int money = PlayerPrefs.GetInt("money");
                 money = money - 200;
@@ -109,14 +114,12 @@ public class DragAndDropPanzer : MonoBehaviour
                         Instantiate(ObjectToSpawn2, worldPos, Quaternion.identity);
                     }
                     inBuildMode = false;
-                    // Find and enable all objects with the tag "street"
                     GameObject[] streets = GameObject.FindGameObjectsWithTag("street");
                     foreach (GameObject street in streets)
                     {
                         street.SetActive(false);
                     }
 
-                    // Find and enable all objects with the tag "lake"
                     GameObject[] lakes = GameObject.FindGameObjectsWithTag("lake");
                     foreach (GameObject lake in lakes)
                     {
@@ -127,6 +130,17 @@ public class DragAndDropPanzer : MonoBehaviour
                 {
                     NotEnoughMoney.GetComponent<UnityEngine.UI.Image>().enabled = true;
                     StartCoroutine(Delay2(1f));
+                    PlayerPrefs.SetInt("bp", 0);
+                    inBuildMode = false;
+                    foreach (GameObject street in streets)
+                    {
+                        street.SetActive(false);
+                    }
+
+                    foreach (GameObject lake in lakes)
+                    {
+                        lake.SetActive(false);
+                    }
                 }
             }
         }
