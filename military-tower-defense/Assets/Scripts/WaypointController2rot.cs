@@ -16,22 +16,13 @@ public class WaypointController2rot : MonoBehaviour
     void Start()
     {
         speed = PlayerPrefs.GetInt("speed");
-        waypoints[0] = GameObject.Find("Waypoint").transform;
-        waypoints[1] = GameObject.Find("Waypoint (1)").transform;
-        waypoints[2] = GameObject.Find("Waypoint (2)").transform;
-        waypoints[3] = GameObject.Find("Waypoint (3)").transform;
-        waypoints[4] = GameObject.Find("Waypoint (4)").transform;
-        waypoints[5] = GameObject.Find("Waypoint (5)").transform;
-        waypoints[6] = GameObject.Find("Waypoint (6)").transform;
-        waypoints[7] = GameObject.Find("Waypoint (7)").transform;
-        waypoints[8] = GameObject.Find("Waypoint (8)").transform;
-        waypoints[9] = GameObject.Find("Waypoint (9)").transform;
-        waypoints[10] = GameObject.Find("Waypoint (10)").transform;
-        waypoints[11] = GameObject.Find("Waypoint (11)").transform;
-        waypoints[12] = GameObject.Find("Waypoint (12)").transform;
-        waypoints[13] = GameObject.Find("Waypoint (13)").transform;
-        waypoints[14] = GameObject.Find("Waypoint (14)").transform;
-        waypoints[15] = GameObject.Find("Waypoint (15)").transform;
+        GameObject[] waypointsObjects = GameObject.FindGameObjectsWithTag("waypoint");
+        waypoints = new Transform[waypointsObjects.Length];
+        System.Array.Sort(waypointsObjects, (a, b) => a.name.CompareTo(b.name));
+        for (int i = 0; i < waypointsObjects.Length; i++)
+        {
+            waypoints[i] = waypointsObjects[i].transform;
+        }
     }
 
     //bewegt sich von Wegpunkt zu Wegpunkt und zieht beim letzten Wegpunkt die definierten Herzen ab

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &995093789140831921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827350397151160460}
+  - component: {fileID: 2127080093892350909}
+  m_Layer: 0
+  m_Name: LoadObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827350397151160460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995093789140831921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -392.76617, y: -224.8998, z: -0.35189313}
+  m_LocalScale: {x: 0.89086866, y: 0.89086866, z: 0.89086866}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2127080093892350909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995093789140831921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520699edcdf821a4580869c4a4e8b69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panzer: {fileID: 1054404706933372528, guid: fad3ed8912dd58b48a59c590bda90207, type: 3}
+  hubschrauber: {fileID: 5817124391092086995, guid: 098e678230d775a4798d3a715cccb999, type: 3}
+  schiff: {fileID: 5136364207809368675, guid: 5f3130c5e30603e459a928ad7b4488e7, type: 3}
+  panzer2: {fileID: 1054404706933372528, guid: fb2fbb3f67ee48c4eaf69afcb125eaaa, type: 3}
+  hubschrauber2: {fileID: 5817124391092086995, guid: 57931bb7672976b42b69495e24b5f979, type: 3}
+  hubschrauber3: {fileID: 5817124391092086995, guid: a3986b32872b71c4a8919a53210e1698, type: 3}
+  schiff2: {fileID: 5136364207809368675, guid: 518b1f54a0d619a42a88768c7146cf5e, type: 3}

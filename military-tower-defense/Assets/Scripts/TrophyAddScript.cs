@@ -12,10 +12,12 @@ public class TrophyAddScript : MonoBehaviour
     public TextMeshProUGUI Trophy2;
     public GameObject Image2;
     public int TrophyCount;
+    public GameObject RestartButton;
 
     //Animation für das hinzufügen der Tropähen
     void Start()
     {
+        RestartButton.SetActive(false);
         Trophy2.text = "";
         Image2.GetComponent<UnityEngine.UI.Image>().enabled = false;
 
@@ -59,5 +61,6 @@ public class TrophyAddScript : MonoBehaviour
 
         Trophy1.text = "" + TrophyCount;
 
+        RestartButton.SetActive(true);
     }
 }

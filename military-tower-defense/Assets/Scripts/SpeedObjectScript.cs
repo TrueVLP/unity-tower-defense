@@ -36,12 +36,12 @@ public class SpeedObjectScript : MonoBehaviour
     //Setzt das speed auf 3
     public void Speedbutton1()
     {
-        PlayerPrefs.SetInt("speed", 3);
+        PlayerPrefs.SetInt("speed", 4);
     }
 
     //Setzt das speed auf 1
     public void Speedbutton2()
     {
-        PlayerPrefs.SetInt("speed", 1);
+        PlayerPrefs.SetInt("speed", 2);
     }
 }

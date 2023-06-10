@@ -13,10 +13,12 @@ public class TrophySubScript : MonoBehaviour
     public TextMeshProUGUI Trophy2;
     public GameObject Image2;
     public int TrophyCount;
+    public GameObject RestartButton;
 
     //Animation zur Abziehung von Tropähen
     void Start()
     {
+        RestartButton.SetActive(false);
         Trophy2.text = "";
         Image2.GetComponent<UnityEngine.UI.Image>().enabled = false;
 
@@ -64,6 +66,8 @@ public class TrophySubScript : MonoBehaviour
         PlayerPrefs.SetInt("trophy", TrophyCount);
 
         Trophy1.text = "" + TrophyCount;
+
+        RestartButton.SetActive(true);
 
     }
 }

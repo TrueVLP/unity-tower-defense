@@ -14,9 +14,9 @@ public class Spawner_mainNEU : MonoBehaviour
     public float spawnInterval = 1f;
     public int enemiesPerWave = 5;
     public int waveCount = 1;
-    public Transform spawnPoint;
     public TextMeshProUGUI roundText;
-   
+    public Transform[] spawnPoints;
+
 
     //holt sich gespeicherte Runden und startet die Wellen
     void Start()
@@ -30,6 +30,8 @@ public class Spawner_mainNEU : MonoBehaviour
             waveCount = 1;
             PlayerPrefs.SetInt("rounds", waveCount);
         }
+
+        PlayerPrefs.SetInt("speed", 0);
         StartCoroutine(SpawnWave());
     }
 
@@ -46,15 +48,18 @@ public class Spawner_mainNEU : MonoBehaviour
                 if (i == 1)
                 {
                     Vector3 randomSpawnOffset2 = Random.insideUnitSphere * spawnRadius;
-                    Vector3 spawnPosition2 = spawnPoint.position + randomSpawnOffset2;
+                    Vector3 spawnPosition2 = spawnPoints[0].position + randomSpawnOffset2;
                     Quaternion spawnRotation2 = Quaternion.identity;
                     Instantiate(enemyPrefab2, spawnPosition2, spawnRotation2);
                 }
                 int randomIndex = Random.Range(0, (enemyPrefabs.Length - 1));
                 GameObject enemyPrefab = enemyPrefabs[randomIndex];
 
+                int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
+                Transform selectedSpawnPoint = spawnPoints[randomSpawnPointIndex];
+
                 Vector3 randomSpawnOffset = Random.insideUnitSphere * spawnRadius;
-                Vector3 spawnPosition = spawnPoint.position + randomSpawnOffset;
+                Vector3 spawnPosition = selectedSpawnPoint.position + randomSpawnOffset;
                 Quaternion spawnRotation = Quaternion.identity;
                 GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
             }
