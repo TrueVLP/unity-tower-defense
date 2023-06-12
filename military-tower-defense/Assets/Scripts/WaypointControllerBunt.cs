@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,10 @@ public class WaypointControllerBunt : MonoBehaviour
     public Hearts otherScript;
 
     private int currentWaypointIndex = 0;
+
+    public TextMeshPro text;
+
+    public int hearts = 3;
 
     //Sucht sich alle Wegpunkte auf der Karte
     void Start()
@@ -43,6 +48,8 @@ public class WaypointControllerBunt : MonoBehaviour
             int hearts = PlayerPrefs.GetInt("hearts") - 100000;
             PlayerPrefs.SetInt("hearts", hearts);
         }
+
+        text.text = "" + hearts;
     }
 }
 

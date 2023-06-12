@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,16 @@ public class WaypointController2k1 : MonoBehaviour
 {
     //Objekte die zum fortbewegen eines bunten Ballons dienen
     public Transform[] waypoints;
+
     public int speed;
+
     public Hearts otherScript;
 
     private int currentWaypointIndex = 0;
+
+    public TextMeshPro text;
+
+    public int hearts = 2;
 
     //Sucht sich alle Wegpunkte auf der Karte
     void Start()
@@ -42,5 +49,7 @@ public class WaypointController2k1 : MonoBehaviour
             int hearts = PlayerPrefs.GetInt("hearts") - 7;
             PlayerPrefs.SetInt("hearts", hearts);
         }
+
+        text.text = "" + hearts;
     }
 }

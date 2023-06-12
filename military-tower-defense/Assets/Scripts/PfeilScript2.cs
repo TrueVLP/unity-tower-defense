@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PfeilScript2 : MonoBehaviour
 {
-
-    //Script zum bewegen des pfeils
-
     public float speed = 10f;
-
     public int moneyability;
+
+    public WaypointController2k1 waypointController2k1; 
+    public WaypointControllerBunt waypointControllerBunt; 
+    public WaypointController2k2 waypointController2k2;
+
+    public int hearts;
 
     void Update()
     {
@@ -23,15 +25,52 @@ public class PfeilScript2 : MonoBehaviour
         int money = PlayerPrefs.GetInt("money");
         if (PlayerPrefs.GetInt("ability2") == 1)
         {
-            money = money + 15;
+            money = money + 20;
         }
         else
         {
-            money = money + 10;
+            money = money + 15;
         }
 
         PlayerPrefs.SetInt("money", money);
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+
+        waypointController2k1 = collision.gameObject.GetComponent<WaypointController2k1>();
+        waypointControllerBunt = collision.gameObject.GetComponent<WaypointControllerBunt>();
+        waypointController2k2 = collision.gameObject.GetComponent<WaypointController2k2>();
+
+        if (waypointController2k1 != null)
+        {
+            Destroy(gameObject);
+            waypointController2k1.hearts -= 1;
+            if (waypointController2k1.hearts == 0)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (waypointControllerBunt != null)
+        {
+            Destroy(gameObject);
+            waypointControllerBunt.hearts -= 1;
+            if (waypointControllerBunt.hearts == 0)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (waypointController2k2 != null)
+        {
+            Destroy(gameObject);
+            waypointController2k2.hearts -= 1;
+            if (waypointController2k2.hearts == 0)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+
     }
 }
