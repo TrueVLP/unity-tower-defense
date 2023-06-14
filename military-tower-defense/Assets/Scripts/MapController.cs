@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class MapController : MonoBehaviour
 {
 
+    //Script zur Bedienung der MapController Szene (Map Auswahl, Laden und Löschen von Speicherständen,...)
+
     public int MapCounter;
 
     public int MapCounter2;

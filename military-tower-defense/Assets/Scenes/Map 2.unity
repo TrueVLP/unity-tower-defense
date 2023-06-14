@@ -6595,22 +6595,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2379381572274587420, guid: a2006585978a5ff409df804fb83602e9, type: 3}
-  - {fileID: 5397670246319632435, guid: 7069a1f18f32e244fa5e617aeef105f8, type: 3}
   - {fileID: 1900142582468412837, guid: 62d0b22eabe39574eabda921a2f44cf0, type: 3}
   - {fileID: 3844796174554189061, guid: a7ca97937aa09a6438ccf6e26d61a490, type: 3}
   - {fileID: 1689755082755444081, guid: 344f6087b68bd0c4baaa38f3caed62d3, type: 3}
   - {fileID: 8670499887301708127, guid: 92dc88b960c4d1045b7e8acc0d51af60, type: 3}
   - {fileID: 7895738598240570211, guid: f426abc62de6d2c4e90902b87d7b10be, type: 3}
   - {fileID: 6082400328489649443, guid: 67956d6c2371222409f790ef16672792, type: 3}
+  - {fileID: 2379381572274587420, guid: a2006585978a5ff409df804fb83602e9, type: 3}
+  - {fileID: 5397670246319632435, guid: 7069a1f18f32e244fa5e617aeef105f8, type: 3}
   - {fileID: 1900142582468412837, guid: 84b0d60809007a148a4135c8fea0d203, type: 3}
   spawnRadius: 0
   spawnInterval: 1
-  enemiesPerWave: 30
+  enemiesPerWave: 10
   waveCount: 0
   roundText: {fileID: 0}
   spawnPoints:
   - {fileID: 741735270}
+  randomIndex: 0
 --- !u!4 &1776817284
 Transform:
   m_ObjectHideFlags: 0

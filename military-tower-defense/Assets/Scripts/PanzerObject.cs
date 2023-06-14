@@ -15,20 +15,27 @@ public class PanzerObject : MonoBehaviour
     public Transform spawnPoint;
     public float spawnRate = 1f;
     private float timer = 0f;
-    public bool rangeAbility = false;
 
     private Transform target;
 
     void Update()
     {
+        float adjustedRotationSpeed = rotationSpeed * PlayerPrefs.GetInt("speed");
+        float adjustedSpawnRate = (float)(spawnRate * (PlayerPrefs.GetInt("speed")/4.5));
 
         if (target == null || Vector3.Distance(transform.position, target.position) > range)
         {
             target = null;
-            GameObject targetObject = GameObject.FindGameObjectWithTag(targetTag);
-            if (targetObject != null)
+            GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(targetTag);
+            float closestDistance = Mathf.Infinity;
+            foreach (GameObject targetObject in targetObjects)
             {
-                target = targetObject.transform;
+                float distance = Vector3.Distance(transform.position, targetObject.transform.position);
+                if (distance < closestDistance && distance <= range)
+                {
+                    closestDistance = distance;
+                    target = targetObject.transform;
+                }
             }
         }
 
@@ -39,18 +46,18 @@ public class PanzerObject : MonoBehaviour
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
                 Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+                transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * adjustedRotationSpeed);
             }
 
             timer += Time.deltaTime;
-            if (timer >= spawnRate && PlayerPrefs.GetInt("speed") >= 1 && (direction.magnitude <= range))
+            if (timer >= adjustedSpawnRate && PlayerPrefs.GetInt("speed") >= 1 && (direction.magnitude <= range))
             {
                 Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
                 timer = 0f;
-
             }
         }
     }
+
 
 }
 

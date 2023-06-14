@@ -12,10 +12,11 @@ public class Spawner_mainNEU : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public float spawnRadius = 5f;
     public float spawnInterval = 1f;
-    public int enemiesPerWave = 5;
+    public int enemiesPerWave = 15;
     public int waveCount = 1;
     public TextMeshProUGUI roundText;
     public Transform[] spawnPoints;
+    public int randomIndex = 0;
 
 
     //holt sich gespeicherte Runden und startet die Wellen
@@ -38,8 +39,12 @@ public class Spawner_mainNEU : MonoBehaviour
     //Verhalten der Wellen
     private IEnumerator SpawnWave()
     {
+        while (PlayerPrefs.GetInt("speed") == 0)
+        {
+            yield return null;
+        }
 
-        GameObject enemyPrefab2 = enemyPrefabs[8];
+    GameObject enemyPrefab2 = enemyPrefabs[8];
 
         for (int i = 1; i < enemiesPerWave; i++)
         {
@@ -52,7 +57,27 @@ public class Spawner_mainNEU : MonoBehaviour
                     Quaternion spawnRotation2 = Quaternion.identity;
                     Instantiate(enemyPrefab2, spawnPosition2, spawnRotation2);
                 }
-                int randomIndex = Random.Range(0, (enemyPrefabs.Length - 1));
+                if(waveCount == 1)
+                {
+                    randomIndex = Random.Range(0, (enemyPrefabs.Length - 3));
+                }
+                else if (waveCount == 2)
+                {
+                    randomIndex = Random.Range(0, (enemyPrefabs.Length - 3));
+                }
+                else if (waveCount == 3)
+                {
+                    randomIndex = Random.Range(0, (enemyPrefabs.Length - 2));
+                }
+                else if (waveCount == 4)
+                {
+                    randomIndex = Random.Range(4, (enemyPrefabs.Length - 2));
+                }
+                else
+                {
+                    randomIndex = Random.Range(7, (enemyPrefabs.Length));
+                }
+               
                 GameObject enemyPrefab = enemyPrefabs[randomIndex];
 
                 int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
@@ -65,6 +90,13 @@ public class Spawner_mainNEU : MonoBehaviour
             }
             yield return new WaitForSeconds(spawnInterval);
         }
+
+        while (GameObject.FindGameObjectsWithTag("bloon").Length > 0)
+        {
+            yield return null;
+        }
+        PlayerPrefs.SetInt("speed", 0);
+
         if (waveCount >= 5)
         {
             SceneManager.LoadScene(4);
@@ -76,7 +108,21 @@ public class Spawner_mainNEU : MonoBehaviour
 
         waveCount++;
 
-        PlayerPrefs.SetInt("rounds", waveCount);
+        enemiesPerWave = enemiesPerWave + 3;
 
+        if (waveCount == 5)
+        {
+            enemiesPerWave = 35;
+            spawnInterval = 0.15f;
+        }
+        else if (waveCount >= 3)
+        {
+
+            spawnInterval = 0.5f;
+        }
+
+        PlayerPrefs.SetInt("rounds", waveCount);
+        
     }
+
 }

@@ -2641,7 +2641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018381512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.361, y: -0.09, z: -1.02}
+  m_LocalPosition: {x: -12.12, y: -0.09, z: -1.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4634,22 +4634,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2379381572274587420, guid: a2006585978a5ff409df804fb83602e9, type: 3}
-  - {fileID: 5397670246319632435, guid: 7069a1f18f32e244fa5e617aeef105f8, type: 3}
   - {fileID: 1900142582468412837, guid: 62d0b22eabe39574eabda921a2f44cf0, type: 3}
   - {fileID: 3844796174554189061, guid: a7ca97937aa09a6438ccf6e26d61a490, type: 3}
   - {fileID: 1689755082755444081, guid: 344f6087b68bd0c4baaa38f3caed62d3, type: 3}
   - {fileID: 8670499887301708127, guid: 92dc88b960c4d1045b7e8acc0d51af60, type: 3}
   - {fileID: 7895738598240570211, guid: f426abc62de6d2c4e90902b87d7b10be, type: 3}
   - {fileID: 6082400328489649443, guid: 67956d6c2371222409f790ef16672792, type: 3}
+  - {fileID: 2379381572274587420, guid: a2006585978a5ff409df804fb83602e9, type: 3}
+  - {fileID: 5397670246319632435, guid: 7069a1f18f32e244fa5e617aeef105f8, type: 3}
   - {fileID: 1900142582468412837, guid: 84b0d60809007a148a4135c8fea0d203, type: 3}
   spawnRadius: 0
   spawnInterval: 1
-  enemiesPerWave: 30
+  enemiesPerWave: 10
   waveCount: 0
   roundText: {fileID: 237523441}
   spawnPoints:
   - {fileID: 1018381513}
+  randomIndex: 0
 --- !u!1 &1586191348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3551809882963779211, guid: 63acc015005954044bd4ba23a996217c, type: 3}
@@ -7741,7 +7742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6376023007643182125, guid: b6919f5acb9d4c34782564debeafaf17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.9800005
+      value: -11.35
       objectReference: {fileID: 0}
     - target: {fileID: 6376023007643182125, guid: b6919f5acb9d4c34782564debeafaf17, type: 3}
       propertyPath: m_LocalPosition.y

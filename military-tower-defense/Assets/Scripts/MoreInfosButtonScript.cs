@@ -12,7 +12,7 @@ public class MoreInfosButtonScript : MonoBehaviour
     public void MoreInfosClick()
     {
 
-        Application.OpenURL("https://www.vlp-entertainment.com/vlp-studios/millitary-tower-defense");
+        Application.OpenURL("https://www.vlp-entertainment.com/vlp-studios/military-tower-defense/");
 
     }
 

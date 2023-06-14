@@ -16,7 +16,7 @@ public class WaypointControllerBunt : MonoBehaviour
 
     public TextMeshPro text;
 
-    public int hearts = 3;
+    public int hearts = 5;
 
     //Sucht sich alle Wegpunkte auf der Karte
     void Start()

@@ -15,7 +15,7 @@ public class WaypointController2k2 : MonoBehaviour
 
     public TextMeshPro text;
 
-    public int hearts = 2;
+    public int hearts = 3;
 
     //Sucht sich alle Wegpunkte auf der Karte
     void Start()
